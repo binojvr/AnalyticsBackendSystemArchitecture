@@ -16,3 +16,9 @@ The system needs to:
 - [ ] run with minimum downtime.
 
 - [ ] have the ability to reprocess historical data in case of bugs in the processing logic.
+
+
+**Requirement Analysis**
+
+
+https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwji98PrhtPkAhXB3mEKHYmrDS4QjRx6BAgBEAQ&url=https%3A%2F%2Fblog.littledata.io%2F2017%2F03%2F15%2Fhow-google-analytics-works%2F&psig=AOvVaw16lWz3mNX-EJuLCC9vNmqe&ust=1568644647160756
