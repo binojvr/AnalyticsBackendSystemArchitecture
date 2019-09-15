@@ -1,7 +1,7 @@
 # AnalyticsBackendSystemArchitecture
  Design A Google Analytic like Backend System. 
  
-** Requirement **
+**Requirement**
  
 We need to provide Google Analytic like services to our customers. Pls provide a high level solution design for the backend system. Feel free to choose any open source tools as you want.
 
