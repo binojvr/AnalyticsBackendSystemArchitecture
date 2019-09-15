@@ -7,7 +7,7 @@ We need to provide Google Analytic like services to our customers. Pls provide a
 
 The system needs to:
 
-handle large write volume: Billions write events per day.
+[ ] handle large write volume: Billions write events per day.
 
 handle large read/query volume: Millions merchants want to get insight about their business. Read/Query patterns are time-series related metrics.
 
