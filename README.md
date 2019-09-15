@@ -20,5 +20,10 @@ The system needs to:
 
 **Requirement Analysis**
 
+*   Collection   : Collects user-interaction data.
+*   Configuration: Allows you to manage how the data is processed.
+*   Processing   : Processes the user-interaction data with the configuration data.
+*   Reporting    : Provides access to all the processed data.
+
 
 ![Image description](https://res.cloudinary.com/littledata/w_554,c_fit/littledata-blog-images/2017/02/googleanalytics4comp.png)
