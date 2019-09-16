@@ -42,7 +42,12 @@ Another solution is RSocket is a new binary application-level protocol capable o
 For our Data collection API, Fire and Forget Model is best suited. 
 
 
-Aprt from RSocket API, we also needed follsing components at the Data collection API
+Aprt from RSocket API, we also needed following components at the Data collection API
+
+**Load Balancer**
+A Load Balancer, usually High Availability Proxy is used as  Software Load Balancing solution. It shall be distributed cluster servers deployed across georgraphy to support users across globe with better response. When we use Kubernetes as a container orchestrator and cluster or workload management we have two options for Load balancing - an extenal load balancer (NOT in your kubernetes cluster) like **HAProxy** using k8s LoadBalancer service  and **Ingress controller** which is just a set of rules to pass to a APIs that is listening for the request. 
+.
+HAProxy routes the requests coming from Web/Mobile Visitor site to the Zuul API Gateway of the solution. Given the nature of a distributed system built for scalability and stateless request and response handling we can distribute the Zuul API gateways spread across geographies. HAProxy performs load balancing (layer 4 + proxy) across our Zuul nodes. High-Availability (HA ) is provided via Keepalived.
 
 Data Collection API Architecture is Shown Below
 
