@@ -72,7 +72,7 @@ Netify also provide Service Mesh which is compeltely different from usual sideca
 
 ![Data Collection API Architecture](https://github.com/binojvr/AnalyticsBackendSystemArchitecture/blob/master/servicemesh-solutions2.png?raw=true)
 
+Here sidecar proxy intercepts/manages service to service communication. On the other hand in Netifi we have a virtual point-to-point network between all the microservice API services.No side car required to be deployed in every ervices and then configure  TCP/IP  configurations. The virtual P2P makes the communciation ligning fast and also secure. 
 
-
-
+![Data Collection API Architecture](https://github.com/binojvr/AnalyticsBackendSystemArchitecture/blob/master/servicemesh-solutions1.png?raw=true)
 
