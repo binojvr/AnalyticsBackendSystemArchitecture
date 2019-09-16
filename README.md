@@ -47,10 +47,8 @@ For our Data collection API, Fire and Forget Model is best suited.
 
 
 
-![API Front End Design] (https://github.com/binojvr/AnalyticsBackendSystemArchitecture/blob/master/Screenshot_2018-08-15-Proteus-Microservices-Platform-Netifi.png?raw=true）
 
 
 
 
-![RSocket Clound Native using Netify](https://github.com/binojvr/AnalyticsBackendSystemArchitecture/blob/master/Screenshot_2018-08-15-Proteus-Microservices-Platform-Netifi.png?raw=true
-)
+![RSocket Clound Native using Netify](https://github.com/binojvr/AnalyticsBackendSystemArchitecture/blob/master/Screenshot_2018-08-15-Proteus-Microservices-Platform-Netifi.png )
