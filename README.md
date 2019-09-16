@@ -106,9 +106,8 @@ I propose Qurakus(claimed to be Supersonic Subatomic Java) REST framework over S
 
 
 
-![Data Reports](https://github.com/binojvr/AnalyticsBackendSystemArchitecture/blob/master/quarkus1.png?raw=true)
+![Data Reports](https://github.com/binojvr/AnalyticsBackendSystemArchitecture/blob/master/Data%20reports.jpg?raw=true)
 
 
-![Graal](https://github.com/binojvr/AnalyticsBackendSystemArchitecture/blob/master/kafka%20spark.jpg?raw=true)
 
 
