@@ -108,6 +108,7 @@ For reports and data visulaization, I am proposing solution involing graphQL as 
 
 ![Data Reports](https://github.com/binojvr/AnalyticsBackendSystemArchitecture/blob/master/Data%20reports.jpg?raw=true)
 
+Report data shall be cached in **MongoDB** for faster access. reports accessed repeatedly or static data can be efficiently cached in mongodb.
 
 **Other Design considertion**
 
@@ -115,3 +116,24 @@ I propose Kubernetes as it allows to deploy and manage cloud-native miroservices
 
 I propose to use countinous integration using github/jenkin. (My personal favourite is GITlab CI)
 
+
+**Solutions for specific Requirement**
+
+*    handle large write volume: Billions write events per day.
+
+At a high level, we need decoupled components, asynchronous communication real-time computations and  highly available systems and db for managing large volume write of event data. We also need to map data to in memory db during processing. Rsocket, Kafka Stream, Spark, cassandra and redis infrstructure solution best suited for this.
+
+*    handle large read/query volume: Millions merchants want to get insight about their business. Read/Query patterns are time-series related metrics.
+ The solution involves 
+     *   DB level - Optimizing Data Queries using indexing, Contrlled query scope (like query range), better Retention strategy for reaccessed data, limit caridnality while fetching
+     *   Application level caching (Mongodb)
+
+- [ ] provide metrics to customers with at most one hour delay.
+
+- [ ] run with minimum downtime.
+
+- [ ] have the ability to reprocess historical data in case of bugs in the processing logic.
+
+We also need to  archives events and performs offline processing and merges the results of with that of real-time computations
+
+ 
