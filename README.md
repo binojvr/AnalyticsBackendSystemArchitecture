@@ -42,6 +42,13 @@ Another solution is RSocket is a new binary application-level protocol capable o
 For our Data collection API, Fire and Forget Model is best suited. 
 
 
+Aprt from RSocket API, we also needed follsing components at the Data collection API
+
+Data Collection API Architecture is Shown Below
+
+![Data Collection API Architecture](https://github.com/binojvr/AnalyticsBackendSystemArchitecture/blob/master/Screenshot_2018-08-15-Proteus-Microservices-Platform-Netifi.png )
+
+
 ![RSocket Clound Native using Netify](https://d33wubrfki0l68.cloudfront.net/0c3c98aa547922a0dce36160ac9755c9f00e2439/64eac/assets/images/netifi-arch3.jpeg
 )
 
@@ -51,4 +58,3 @@ For our Data collection API, Fire and Forget Model is best suited.
 
 
 
-![RSocket Clound Native using Netify](https://github.com/binojvr/AnalyticsBackendSystemArchitecture/blob/master/Screenshot_2018-08-15-Proteus-Microservices-Platform-Netifi.png )
