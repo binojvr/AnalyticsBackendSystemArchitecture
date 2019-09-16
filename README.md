@@ -88,3 +88,6 @@ I have decided to push the events to Apache Kafka as it handle high volumes of t
 Kafka brokers cluster shall run multiple data centers across the globe to provide highly available stream pipeline bus.
 
 
+Now we have data pushed into highly available Kafka System and now we need read this and build Distributed Datasets (Time series dataset). APache spark can be used to process stream data as it provide large number of tranformations and aggregation actions to build out dataset. Spark can use Inmemory database like Redis during the transformation and aggregation action. Once aggregated it can be pushed to a NoSQL data store. Cassandra is best suited for the case. Cassandra is a peer-to-peer architecture ensuring  high availability. There is no concept of master slave.
+
+![Kafka Spark cassandra Architecture](https://github.com/binojvr/AnalyticsBackendSystemArchitecture/blob/master/kafka%20spark.jpg?raw=true)
