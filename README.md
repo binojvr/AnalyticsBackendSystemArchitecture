@@ -100,6 +100,8 @@ There are many configuration required for data analtics which can be done via Co
 
 I propose Qurakus(claimed to be Supersonic Subatomic Java) REST framework over Spring because its A Kubernetes Native Java REST stack. Another aspect is we can use GraalVM or OpenJDK HotSpot. Graal is super fast polygot VM running applications written in JavaScript, Python, Ruby, R, JVM-based languages like Java, Scala, Groovy, Kotlin, Clojure, and LLVM-based languages such as C and C++.
 
+https://quarkus.io/
+
 ![Quarkus](https://github.com/binojvr/AnalyticsBackendSystemArchitecture/blob/master/quarkus1.png?raw=true)
 
 
