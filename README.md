@@ -70,8 +70,7 @@ Follwing is architecture diagram sourced from netify
 
 Netify also provide Service Mesh which is compeltely different from usual sidecar approach. Existing meshes require doubling the size of your infrastructure by requiring you to run proxies for every single service instance that we deploy, increasing operational overhead and cost, while reducing overall performance.
 
-![Data Collection API Architecture](https://github.com/binojvr/AnalyticsBackendSystemArchitecture/blob/master/Screenshot_2018-08-15-Proteus-Microservices-Platform-Netifi.png )
-
+![Data Collection API Architecture](https://github.com/binojvr/AnalyticsBackendSystemArchitecture/blob/master/servicemesh-solutions2.png?raw=true)
 
 
 
