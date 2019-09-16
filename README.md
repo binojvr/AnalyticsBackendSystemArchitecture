@@ -81,7 +81,10 @@ Scalability,fault-tolerance and availability which I have not mentioned above fo
 
 **Data Processing Design**
 
-I have decided to push the events to Apache Kafka, due to its proven abilities at high volumes of traffic, its durability, and its fault-tolerance. Different event types in the system shall be maintained in separated Kafka topics, which helps in scaling them separately.  Following is the architecture 
+I have decided to push the events to Apache Kafka as it handle high volumes of traffic which is core requirement for google analtical platoform. Different event types in the system shall be maintained in separated Kafka topics, which helps in scaling them separately.  Following is the architecture 
 
 ![Kafka Stream Architecture](https://github.com/binojvr/AnalyticsBackendSystemArchitecture/blob/master/Kafka.png?raw=true)
+
+Kafka brokers cluster shall run multiple data centers across the globe to provide highly available stream pipeline bus.
+
 
