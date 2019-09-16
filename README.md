@@ -76,3 +76,12 @@ Here sidecar proxy intercepts/manages service to service communication. On the o
 
 ![Data Collection API Architecture](https://github.com/binojvr/AnalyticsBackendSystemArchitecture/blob/master/servicemesh-solutions1.png?raw=true)
 
+
+Scalability,fault-tolerance and availability which I have not mentioned above for the the Rsocket microservices achieved through deploying the services Kubernetes cluster which I will explain at the end of the design
+
+**Data Processing Design**
+
+I have decided to push the events to Apache Kafka, due to its proven abilities at high volumes of traffic, its durability, and its fault-tolerance. Different event types in the system shall be maintained in separated Kafka topics, which helps in scaling them separately.  Following is the architecture 
+
+![Kafka Stream Architecture](https://github.com/binojvr/AnalyticsBackendSystemArchitecture/blob/master/Kafka.png?raw=true)
+
