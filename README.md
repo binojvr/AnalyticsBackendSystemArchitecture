@@ -109,5 +109,9 @@ For reports and data visulaization, I am proposing solution involing graphQL as 
 ![Data Reports](https://github.com/binojvr/AnalyticsBackendSystemArchitecture/blob/master/Data%20reports.jpg?raw=true)
 
 
+**Other Design considertion**
 
+I propose Kubernetes as it allows to deploy and manage cloud-native miroservices based analtics application helps in scaling application, hot deployment, version management, health monitoring nodes/pods, tracing with help of add on libraries 
+
+I propose to use countinous integration using github/jenkin. (My personal favourite is GITlab CI)
 
