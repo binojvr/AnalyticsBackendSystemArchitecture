@@ -93,13 +93,20 @@ Now we have data pushed into highly available Kafka System and now we need read 
 ![Kafka Spark cassandra Architecture](https://github.com/binojvr/AnalyticsBackendSystemArchitecture/blob/master/kafka%20spark.jpg?raw=true)
 
 
-**Configuration**
+**Data Configuration**
 
 There are many configuration required for data analtics which can be done via Configuration module. Example include create users and  acount, managing reports, configuraing reports, setting user access etc. This can be implemented with simple REST microservices API.
 
 I propose Qurakus(claimed to be Supersonic Subatomic Java) REST framework over Spring because its A Kubernetes Native Java REST stack. Another aspect is we can use GraalVM or OpenJDK HotSpot. Graal is super fast polygot VM running applications written in JavaScript, Python, Ruby, R, JVM-based languages like Java, Scala, Groovy, Kotlin, Clojure, and LLVM-based languages such as C and C++.
 
 ![Quarkus](https://github.com/binojvr/AnalyticsBackendSystemArchitecture/blob/master/quarkus1.png?raw=true)
+
+
+**Reporting/Data Visualization API**
+
+
+
+![Data Reports](https://github.com/binojvr/AnalyticsBackendSystemArchitecture/blob/master/quarkus1.png?raw=true)
 
 
 ![Graal](https://github.com/binojvr/AnalyticsBackendSystemArchitecture/blob/master/kafka%20spark.jpg?raw=true)
