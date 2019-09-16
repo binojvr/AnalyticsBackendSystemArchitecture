@@ -129,8 +129,8 @@ At a high level, we need decoupled components, asynchronous communication real-t
 *   **handle large read/query volume: Millions merchants want to get insight about their business. Read/Query patterns are time-series related metrics**
 
  The solution involves 
-    >  DB level - Optimizing Data Queries using indexing, Contrlled query scope (like query range), better Retention strategy for reaccessed data, limit caridnality while fetching
-    > Application level - caching (Mongodb)
+    >  DB level - Optimizing Data Queries using **indexing**, Contrlled **query scope** (like query range), better **Retention strategy** for reaccessed data, limit **caridnality** while fetching
+    > Application level - **caching** (Mongodb)
 
 *   **provide metrics to customers with at most one hour delay**
      
@@ -143,5 +143,5 @@ At a high level, we need decoupled components, asynchronous communication real-t
 *   **have the ability to reprocess historical data in case of bugs in the processing logic**
     
 Kafka writes the messages it receives to disk and keeps multiple copies of each message, hence it ensures durability. 
-So in case bugs or failures we can reprocess the data. However, its not the permanent store. So we configure our Kafka cluster to retain information for a few hours and get the data to ourpush data permanent store Google Cloud STorage or Amazon S3.
+So in case bugs or failures we can reprocess the data. However, its not the permanent store. So we configure our Kafka cluster to retain information for a few hours and get the data and then push data to permanent store like **Google Cloud STorage** or **Amazon S3**.
  
