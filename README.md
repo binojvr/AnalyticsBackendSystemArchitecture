@@ -33,15 +33,15 @@ The system needs to:
 
 **Data Collection Backend API Design**
 
-Analtics input data includes millions of concurrent event data coming from sources. The volume is huge and it comes in very fast rates from milliions of sources. Hence Data collection API  must be  higly scalable highly efficient microservice API. We have many architecture options for designing the microservice API. The most common is REST microservice. The REST depends on HTTP/1.1 protocol. We know that HTTP/1.1 highly inefecient when we compared with web socket or HTTP/1.2 protocol implementations. HTTP/1.x was fundamentally built over the principle that only one response can be delivered at a time. This led to response queueing and blocking, slowing down the TCP connection along with whole lot of other problems. Many these problems are solved by HTTP/1.2 though REST doesnt support it yet.  Moreover the request response interaction model of HTTP that REST uses makes it poor choice for the data collection backend API.
+Analtics input data includes millions of concurrent event data coming from sources. The volume is huge and it comes in very fast rates from milliions of sources. Hence Data collection API  must be  higly scalable highly efficient microservice API. We have many architecture options for designing the microservice API. The most common is REST microservice. The REST depends on HTTP/1.1 protocol. We know that HTTP/1.1 highly inefficient when we compare with websocket or HTTP/1.2 protocol implementations. HTTP/1.x was fundamentally built over the principle that only one response can be delivered at a time. This led to response queueing and blocking, slowing down the TCP connection along with whole lot of other problems. Many these problems are solved by HTTP/1.2 though REST doesnt support it yet.  Moreover the request response interaction model of HTTP that REST uses makes it poor choice for the data collection backend API.
 
-Another solution is RSocket is a new binary application-level protocol capable of reactive streaming. Its is transport agnostic and can be used on top of any transport protocol like TCP or even on top of HTTP/2 or WebSocket. From QPS, latency, CPU consumption, and scalability, RSocket performs better than many compteting microservice implementation like REST, grpc etc. RSocket has various interaction  which can be used for different Use cases.
+Another solution is RSocket, is a new binary application-level protocol capable of reactive streaming. Its is transport agnostic and can be used on top of any transport protocol like TCP or even on top of HTTP/2 or WebSocket. From QPS, latency, CPU consumption, and scalability, RSocket performs better than many compteting microservice implementation like REST, grpc etc. RSocket has various interaction  which can be used for different Use cases.
 *   request/response (HTTP Like)
 *   request/stream (finite stream of many)
 *   fire-and-forget (Kind of Async)
 *   event subscription (infinite stream of many)
 
-For our Data collection API, Fire and Forget Model is best suited. 
+For our Data collection API, Fire and Forget Model is best suited because its highly async. 
 
 
 Aprt from RSocket API, we also needed following components at the Data collection API
@@ -54,10 +54,9 @@ Its  a gateway and single point of entry for microservices APIs. We have many op
 
 **Service Mesh**
 
-Service mesh is an interservice communication among Microservice APIs. The service mesh is usually implemented by providing a proxy instance, called a sidecar, for each service instance. Istio is most common Service mesh infrastructure tool available in market. It also provide other services to monitor and contraol microservices. 
+Service mesh is an interservice communication among Microservice APIs. The service mesh is usually implemented by providing a proxy instance, called a sidecar, for each service instance. **Istio** is most common Service mesh infrastructure tool available in market. It also provide other services to monitor and control microservices. 
 
-
-Data Collection API Architecture is Shown Below
+I am proposing a Data Collection API Architecture is Shown Below
 
 ![Data Collection API Architecture](https://github.com/binojvr/AnalyticsBackendSystemArchitecture/blob/master/Screenshot_2018-08-15-Proteus-Microservices-Platform-Netifi.png )
 
@@ -83,14 +82,14 @@ Scalability,fault-tolerance and availability which I have not mentioned above fo
 
 **Data Processing Design**
 
-I have decided to push the events to Apache Kafka as it handle high volumes of traffic which is core requirement for google analtical platoform. Different event types in the system shall be maintained in separated Kafka topics, which helps in scaling them separately.  Following is the architecture 
+My proposed design  uses **Apache Kafka** events data collection  as it handle high volumes of traffic which is core requirement for google analytical platoform. Different event types in the system shall be maintained in separated Kafka topics, which helps in scaling them separately.  Following is the architecture 
 
 ![Kafka Stream Architecture](https://github.com/binojvr/AnalyticsBackendSystemArchitecture/blob/master/Kafka.png?raw=true)
 
 Kafka brokers cluster shall run multiple data centers across the globe to provide highly available stream pipeline bus.
 
 
-Now we have data pushed into highly available Kafka System and now we need read this and build Distributed Datasets (Time series dataset). APache spark can be used to process stream data as it provide large number of tranformations and aggregation actions to build out dataset. Spark can use Inmemory database like Redis during the transformation and aggregation action. Once aggregated it can be pushed to a NoSQL data store. Cassandra is best suited for the case. Cassandra is a peer-to-peer architecture ensuring  high availability. There is no concept of master slave.
+Now we have data pushed into highly available Kafka System and now we need read this and build Distributed Datasets (Time series dataset). APache spark can be used to process stream data as it provide large number of tranformations and aggregation actions to build our dataset. Spark can use Inmemory database like Redis during the transformation and aggregation action. Once aggregated it can be pushed to a NoSQL data store. Cassandra is best suited for the case. Cassandra is a peer-to-peer architecture ensuring  high availability. There is no concept of master slave.
 
 ![Kafka Spark cassandra Architecture](https://github.com/binojvr/AnalyticsBackendSystemArchitecture/blob/master/kafka%20spark.jpg?raw=true)
 
@@ -106,7 +105,7 @@ I propose Qurakus(claimed to be Supersonic Subatomic Java) REST framework over S
 
 **Reporting/Data Visualization API**
 
-For reports and data visulaization, I am proposing solution involing graphQL as its best suited fi require large types of reports and dyanamic reports. Of course graphQL can be agregator and still it can call REST microservice API to gather data from　data store. I propose Quarkus REST stack over sporing boot in this implementation also
+For reports and data visulaization, I am proposing solution involing graphQL as its best suited as we require large types of custom reports and dyanamic reports. Of course graphQL can be agregator and still it can call REST microservice API to gather data from　data store. I propose Quarkus REST stack over sporing boot in this implementation this microservice bankend for GraphQL aggregator
 
 ![Data Reports](https://github.com/binojvr/AnalyticsBackendSystemArchitecture/blob/master/Data%20reports.jpg?raw=true)
 
@@ -114,7 +113,7 @@ Report data shall be cached in **MongoDB** for faster access. reports accessed r
 
 **Other Design considertion**
 
-I propose Kubernetes as it allows to deploy and manage cloud-native miroservices based analtics application helps in scaling application, hot deployment, version management, health monitoring nodes/pods, tracing with help of add on libraries 
+I propose Kubernetes as CD solution it allows to deploy and manage cloud-native miroservices based analtics application helps in scaling application, hot deployment, version management, health monitoring nodes/pods, tracing with help of add on modules 
 
 I propose to use countinous integration using github/jenkin. (My personal favourite is GITlab CI)
 
