@@ -45,27 +45,32 @@ For our Data collection API, Fire and Forget Model is best suited.
 Aprt from RSocket API, we also needed following components at the Data collection API
 
 **Load Balancer**
-A Load Balancer, usually High Availability Proxy is used as  Software Load Balancing solution. It shall be distributed cluster servers deployed across georgraphy to support users across globe with better response. When we use Kubernetes as a container orchestrator and cluster or workload management we have two options for Load balancing - an extenal load balancer (NOT in your kubernetes cluster) like **HAProxy** using k8s LoadBalancer service  and **Ingress controller** which is just a set of rules to pass to a APIs that is listening for the request. 
+A Load Balancer, usually High Availability Proxy is used as  Software Load Balancing solution. It shall be distributed cluster servers deployed across georgraphy to support users across globe with better response. When we use Kubernetes as a container orchestrator and cluster or workload management we have two options for Load balancing - an extenal load balancer (NOT in your kubernetes cluster) like **HAProxy** using k8s LoadBalancer service  and **Ingress controller** which is just a set of rules to pass to a APIs that is listening for the request.  (We would use netify as External HALB which I will discuss later)
 
 **API gateway, Service Registration/Discovery**
 Its  a gateway and single point of entry for microservices APIs. We have many options Spring cloud Gateway (which itself built on top of Rsocket) or Apache Dubbo. Dubbo provide Automatic service registration and discovery, Load banlacing,Runtime traffic routing and Visualized service monitoring also. Visualized monitoring very important as it helps in querying service metadata, health status and statistics.
 
+**Service Mesh**
 
-
-
-
+Service mesh is an interservice communication among Microservice APIs. The service mesh is usually implemented by providing a proxy instance, called a sidecar, for each service instance. Istio is most common Service mesh infrastructure tool available in market. It also provide other services to monitor and contraol microservices. 
 
 
 Data Collection API Architecture is Shown Below
 
 ![Data Collection API Architecture](https://github.com/binojvr/AnalyticsBackendSystemArchitecture/blob/master/Screenshot_2018-08-15-Proteus-Microservices-Platform-Netifi.png )
 
+**Netifi**
 
-I am propsoing to use
+I am propsoing to use Netify which simplifies the process of building cloud-native applications and microservices using Rsocket. Applications and services can communicate with each other as peers, without any of them having to keep track of where their peers are to be found, while Netifi takes care of networking concerns like routing, session resumption, application flow control, and predictive load balancing. 
+
+Follwing is architecture diagram sourced from netify
 
 ![RSocket Clound Native using Netify](https://d33wubrfki0l68.cloudfront.net/0c3c98aa547922a0dce36160ac9755c9f00e2439/64eac/assets/images/netifi-arch3.jpeg
 )
 
+Netify also provide Service Mesh which is compeltely different from usual sidecar approach. Existing meshes require doubling the size of your infrastructure by requiring you to run proxies for every single service instance that we deploy, increasing operational overhead and cost, while reducing overall performance.
+
+![Data Collection API Architecture](https://github.com/binojvr/AnalyticsBackendSystemArchitecture/blob/master/Screenshot_2018-08-15-Proteus-Microservices-Platform-Netifi.png )
 
 
 
