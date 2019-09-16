@@ -104,7 +104,7 @@ I propose Qurakus(claimed to be Supersonic Subatomic Java) REST framework over S
 
 **Reporting/Data Visualization API**
 
-
+For reports and data visulaization, I am proposing solution involing graphQL as its best suited fi require large types of reports and dyanamic reports. Of course graphQL can be agregator and still it can call REST microservice API to gather data from　data store. I propose Quarkus REST stack over sporing boot in this implementation also
 
 ![Data Reports](https://github.com/binojvr/AnalyticsBackendSystemArchitecture/blob/master/Data%20reports.jpg?raw=true)
 
