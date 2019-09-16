@@ -7,15 +7,17 @@ We need to provide Google Analytic like services to our customers. Pls provide a
 
 The system needs to:
 
-- [ ]  handle large write volume: Billions write events per day.
+- [X]  handle large write volume: Billions write events per day.
 
-- [ ] handle large read/query volume: Millions merchants want to get insight about their business. Read/Query patterns are time-series related metrics.
+- [X] handle large read/query volume: Millions merchants want to get insight about their business. Read/Query patterns are time-series related metrics.
 
-- [ ] provide metrics to customers with at most one hour delay.
+- [X] provide metrics to customers with at most one hour delay.
 
-- [ ] run with minimum downtime.
+- [X] run with minimum downtime.
 
-- [ ] have the ability to reprocess historical data in case of bugs in the processing logic.
+- [X] have the ability to reprocess historical data in case of bugs in the processing logic.
+
+***Please refer at the end for solution to above specific requirement***
 
 
 **Requirement Analysis**
