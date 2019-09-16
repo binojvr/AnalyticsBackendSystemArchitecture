@@ -91,3 +91,17 @@ Kafka brokers cluster shall run multiple data centers across the globe to provid
 Now we have data pushed into highly available Kafka System and now we need read this and build Distributed Datasets (Time series dataset). APache spark can be used to process stream data as it provide large number of tranformations and aggregation actions to build out dataset. Spark can use Inmemory database like Redis during the transformation and aggregation action. Once aggregated it can be pushed to a NoSQL data store. Cassandra is best suited for the case. Cassandra is a peer-to-peer architecture ensuring  high availability. There is no concept of master slave.
 
 ![Kafka Spark cassandra Architecture](https://github.com/binojvr/AnalyticsBackendSystemArchitecture/blob/master/kafka%20spark.jpg?raw=true)
+
+
+**Configuration**
+
+There are many configuration required for data analtics which can be done via Configuration module. Example include create users and  acount, managing reports, configuraing reports, setting user access etc. This can be implemented with simple REST microservices API.
+
+I propose Qurakus(claimed to be Supersonic Subatomic Java) REST framework over Spring because its A Kubernetes Native Java REST stack. Another aspect is we can use GraalVM or OpenJDK HotSpot. Graal is super fast polygot VM running applications written in JavaScript, Python, Ruby, R, JVM-based languages like Java, Scala, Groovy, Kotlin, Clojure, and LLVM-based languages such as C and C++.
+
+![Quarkus](https://github.com/binojvr/AnalyticsBackendSystemArchitecture/blob/master/quarkus1.png?raw=true)
+
+
+![Graal](https://github.com/binojvr/AnalyticsBackendSystemArchitecture/blob/master/kafka%20spark.jpg?raw=true)
+
+
