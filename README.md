@@ -128,12 +128,13 @@ At a high level, we need decoupled components, asynchronous communication real-t
      *   DB level - Optimizing Data Queries using indexing, Contrlled query scope (like query range), better Retention strategy for reaccessed data, limit caridnality while fetching
      *   Application level caching (Mongodb)
 
-- [ ] provide metrics to customers with at most one hour delay.
+     *   provide metrics to customers with at most one hour delay.
+       Job scheduling in Apache spark should be able do this
 
-- [ ] run with minimum downtime.
-
-- [ ] have the ability to reprocess historical data in case of bugs in the processing logic.
-
-We also need to  archives events and performs offline processing and merges the results of with that of real-time computations
-
+     *   run with minimum downtime.
+ Kafka, Spark and cassandra all provide high availability along with load balancing and **kubernates(Rolling updates)** ensure we have have a highly available system with minimum downtime
+    *   have the ability to reprocess historical data in case of bugs in the processing logic.
+    
+Kafka writes the messages it receives to disk and keeps multiple copies of each message, hence it ensures durability. 
+So in case bugs or failures we can reprocess the data. However, its not the permanent store. So we configure our Kafka cluster to retain information for a few hours and get the data to ourpush data permanent store Google Cloud STorage or Amazon S3.
  
